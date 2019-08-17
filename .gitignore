@@ -1,0 +1,10 @@
+node_modules
+build
+
+webpackBuild
+!webpackBuild/index.html
+!webpackBuild/css/reset.css
+coverage
+
+.stryker-tmp
+.yarn-error.log
