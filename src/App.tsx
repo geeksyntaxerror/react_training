@@ -62,16 +62,8 @@ class App extends Component {
     fetch('http://jsonplaceholder.typicode.com/users')
       .then((res) => res.json())
       .then((data) => {
-        const table_row = data.map((single: any,i : number) => {
-         return <tr key= {i}>
-            <th scope="row">{single.id}</th>
-            <td>{single.name}</td>
-            <td>{single.username}</td>
-            <td>{single.email}</td>
-          </tr>
-        });
         this.setState({
-          contacts : table_row
+          contacts : data
         })
       })
   }
