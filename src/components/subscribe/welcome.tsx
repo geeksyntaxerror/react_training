@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./welcome.css"
 
 interface Props {
 
@@ -6,7 +7,9 @@ interface Props {
 interface MyState {
     message: string;
     button: string;
-    isHover : boolean;
+    isHover: boolean;
+    boxActive: boolean;
+    boxMessage : string;
 }
 
 
@@ -16,31 +19,34 @@ class Welcome extends Component<Props, MyState> {
         this.state = {
             message: 'Welcome Visitor',
             button: 'Subscribe',
-            isHover : false
+            isHover: false,
+            boxActive: true,
+            boxMessage : "Remove Box"
         }
     }
 
     render() {
         return (
             <div>
-                <h1>{this.state.message}</h1>
-                <button className={this.state.isHover ? "btn btn-primary" : "btn btn-success"} 
-                onClick={this.changeMessage}
-                onMouseEnter = {this.hoverOn}
-                onMouseLeave = {this.hoverOff}>{this.state.button}</button>
+                <div className={this.state.boxActive ? "box" : ""}><h1>{this.state.message}</h1></div>
+                <button className={this.state.isHover ? "btn btn-primary" : "btn btn-success"}
+                    onClick={this.changeMessage}
+                    onMouseEnter={this.hoverOn}
+                    onMouseLeave={this.hoverOff}>{this.state.button}</button>
+                <button className = "btn btn-primary"onClick={this.box}>{this.state.boxMessage}</button>
             </div>
         );
     }
 
-    hoverOn = ()=>{
+    hoverOn = () => {
         this.setState({
-            isHover : true
+            isHover: true
         });
     }
 
-    hoverOff = ()=>{
+    hoverOff = () => {
         this.setState({
-            isHover : false
+            isHover: false
         });
     }
 
@@ -57,7 +63,21 @@ class Welcome extends Component<Props, MyState> {
                 message: 'Already Subscribed'
             });
         }
+    }
 
+    box = () => {
+        if (this.state.boxActive == true) {
+            this.setState({
+                boxActive: false,
+                boxMessage : "Remove Box"
+            });
+        }
+        else {
+            this.setState({
+                boxActive: true,
+                boxMessage : "Add Box"
+            });
+        }
     }
 }
 
