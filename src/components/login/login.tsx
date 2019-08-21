@@ -12,6 +12,19 @@ class Login extends React.Component<{},MyState>{
             username : "",
             password : ""
         }
+        this.handleChange = this.handleChange.bind(this);
+    }
+    handleChange(event : any){
+        if(event.target.name == 'username'){
+            this.setState({
+                username : event.target.value
+            })
+        }
+        else{
+            this.setState({
+                password : event.target.value
+            });
+        }
     }
     submit = ()=>{
         console.log("Username : "+this.state.username);
@@ -22,11 +35,11 @@ class Login extends React.Component<{},MyState>{
         return(
             <form>
                 <label>Username
-                    <input type="text" name="username" onChange = {e=>{this.setState({username : e.target.value})}}/>
+                    <input type="text" name="username" onChange = {this.handleChange}/>
                 </label>
                 <br></br>
                 <label>password
-                    <input type="password" name="password" onChange = {e=>{this.setState({password : e.target.value})}}/>
+                    <input type="password" name="password" onChange = {this.handleChange}/>
                 </label>
                 <br></br>
                 <button type="button" onClick={this.submit}>Submit</button>
