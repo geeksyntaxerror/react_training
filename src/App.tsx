@@ -6,6 +6,7 @@ import Main from './components/main_body/main';
 import Welcome from './components/subscribe/welcome';
 import { string } from 'prop-types';
 import Contacts from './components/rest/Contacts';
+import Login from './components/login/login';
 
 const data = [
   ['1,014', 'per', 'inceptos', 'himenaeos', 'Curabitur'],
@@ -81,8 +82,9 @@ class App extends Component {
             <Main data = { data }/>
           </div>
         </div> */}
-        <Welcome />
+        {/* <Welcome /> */}
         {/* <Contacts contacts={this.state.contacts} /> */}
+        <Login/>
       </div>
     );
   }
