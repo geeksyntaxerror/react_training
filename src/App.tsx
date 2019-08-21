@@ -51,14 +51,13 @@ class App extends Component {
   constructor(props: any) {
     super(props)
 
-    this.fetchContacts();
   }
 
   state = {
     contacts: []
   }
 
-  fetchContacts() {
+  componentDidMount() {
     fetch('http://jsonplaceholder.typicode.com/users')
       .then((res) => res.json())
       .then((data) => {
