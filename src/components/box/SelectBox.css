@@ -1,0 +1,15 @@
+
+.redBox {
+    width: 100px;
+    border: 10px solid red;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  
+.greenBox {
+    width: 100px;
+    border: 10px solid green;
+    padding: 20px;
+    margin: 10px;
+  }
