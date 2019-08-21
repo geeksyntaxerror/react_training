@@ -28,7 +28,7 @@ class Welcome extends Component<Props, MyState> {
     render() {
         return (
             <div>
-                <div className={this.state.boxActive ? "box" : ""}><h1>{this.state.message}</h1></div>
+                {this.state.boxActive && <div className="box"><h1>{this.state.message}</h1></div>}
                 <button className={this.state.isHover ? "btn btn-primary" : "btn btn-success"}
                     onClick={this.changeMessage}
                     onMouseEnter={this.hoverOn}

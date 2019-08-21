@@ -81,8 +81,8 @@ class App extends Component {
             <Main data = { data }/>
           </div>
         </div> */}
-        {/* <Welcome /> */}
-        <Contacts contacts={this.state.contacts} />
+        <Welcome />
+        {/* <Contacts contacts={this.state.contacts} /> */}
       </div>
     );
   }
