@@ -18,14 +18,14 @@ const Contacts : React.FunctionComponent<MainProps> = (contacts : any)=>{
   </thead>
   <tbody>
     {
-        contacts.map((contact : any)=>{
+        contacts.contacts.map((contact : any)=>(
             <tr>
                 <td>{contact.id}</td>
                 <td>{contact.name}</td>
                 <td>{contact.username}</td>
                 <td>{contact.email}</td>
             </tr>
-        })
+        ))
     }
   </tbody>
 </table>
