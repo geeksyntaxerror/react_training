@@ -9,6 +9,8 @@ import Contacts from './components/rest/Contacts';
 import Login from './components/login/login';
 import SelectBox from './components/box/SelectBox';
 import ChildComponent from './components/ChildComponent';
+import ComponentA from './components/Context/ComponentA';
+import { UserContext } from './components/UserContext';
 
 
 const data = [
@@ -66,14 +68,12 @@ class App extends Component {
       .then((res) => res.json())
       .then((data) => {
         this.setState({
-          contacts : data
+          contacts: data
         })
       })
   }
 
   public cont = [];
-
-
 
   render() {
     return (
@@ -89,7 +89,16 @@ class App extends Component {
         {/* <Contacts contacts={this.state.contacts} /> */}
         {/* <Login/> */}
         {/* <SelectBox /> */}
-        <ChildComponent />
+        {/* <ChildComponent /> */}
+        <UserContext.Provider value={{
+          username : "kiran",
+          companyName : "geeksyntaxerror",
+          data : "welcome to context",
+          sideOption : "MyAccount"
+        }}>
+          <ComponentA />
+
+        </UserContext.Provider>
       </div>
     );
   }
