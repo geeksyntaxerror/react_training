@@ -8,6 +8,8 @@ import { string } from 'prop-types';
 import Contacts from './components/rest/Contacts';
 import Login from './components/login/login';
 import SelectBox from './components/box/SelectBox';
+import ChildComponent from './components/ChildComponent';
+
 
 const data = [
   ['1,014', 'per', 'inceptos', 'himenaeos', 'Curabitur'],
@@ -86,7 +88,8 @@ class App extends Component {
         {/* <Welcome /> */}
         {/* <Contacts contacts={this.state.contacts} /> */}
         {/* <Login/> */}
-        <SelectBox />
+        {/* <SelectBox /> */}
+        <ChildComponent />
       </div>
     );
   }
